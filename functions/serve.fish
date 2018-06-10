@@ -1,15 +1,21 @@
 function serve
-    # serve port [path]
+    # serve path [port]
+    set old_dir (pwd)
+
     if test -n "$argv[1]"
-        if test -n "$argv[2]"
-            pushd "$argv[2]"
-        end
-        python -m http.server $argv[1]
-        if test -n "$argv[2]"
-            popd
-        end
+        set new_dir "$argv[1]"
     else
-        python -m http.server 4000
+        set new_dir (pwd)
     end
+
+    if test -n "$argv[2]"
+        set port "$argv[2]"
+    else
+        set port 4000
+    end
+
+    cd "$new_dir"
+    python -m http.server $port
+    cd "$old_dir"
 end
 
