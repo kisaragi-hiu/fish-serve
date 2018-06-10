@@ -2,7 +2,11 @@
 
 Launch a server in a directory.
 
-Uses Python's `http.server` module.
+Uses Python's `http.server` module. Main logic is one line:
+
+```fish
+python -m http.server $port
+```
 
 ## Install
 
