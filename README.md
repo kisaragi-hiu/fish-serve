@@ -16,11 +16,11 @@ fisher kisaragi-hiu/fish-serve
 
 ```fish
 # start a server on port 8080 from ~/public/
-serve 8080 ~/public/
+serve ~/public 8080
 
 # start a server from the current directory
 serve
 
-# start a server on port 4000
-serve 4000
+# start a server from ~/public using default port (4000)
+serve ~/public
 ```
